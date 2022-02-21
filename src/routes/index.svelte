@@ -11,6 +11,7 @@
 </svelte:head>
 
 <section>
+	Home!
 	<h1>
 		<div class="welcome">
 			<picture>

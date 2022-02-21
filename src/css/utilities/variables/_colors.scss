@@ -1,28 +1,16 @@
 @mixin colors-root {
-  --c-primary: #3d2892;
-
-  --c-light-01: #fefefe;
-
-  --c-gray: #404142;
-  --c-gray--01: #747679;
-  --c-gray--02: #979797;
-  --c-gray--03: #a0a9ba;
-  --c-gray--04: #e3dddd;
-  --c-gray--05: #d2d2dd;
-  --c-gray--06: #bbbbc6;
-  --c-gray--07: #b3b3b3;
-
   --c-white: #fff;
-
-  --c-red: #f61f1f;
-  --c-red--01: #960012;
-  --c-red--02: #da3347;
-
-  --c-green: #145528;
-  --c-green--01: #38ba5f;
+  --c-light-01: #ebeff1;
 
   --c-black: #000;
-  --c-black--01: #262728;
-  --c-black--02: #4b4b4b;
-  --c-black--03: #161616;
+
+  --c-gray--rgb: rgba(0, 0, 0, .2);
+
+  --c-blue: #24538b;
+  --c-green: #248b28;
+
+  --c-red: #f61f1f;
+  --c-red-01: #ff2d2d;
+
+  --c-yellow: #ffbd14;
 }
