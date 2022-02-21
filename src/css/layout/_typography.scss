@@ -1,0 +1,7 @@
+@import '../utilities/variables/all';
+@import '../utilities/utils/all';
+@import '../utilities/extends/extends';
+
+.title {
+  @extend %title;
+}

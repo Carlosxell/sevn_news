@@ -1,0 +1,10 @@
+@import '../variables/all';
+@import '../variables/sizes';
+@import '../utils/all';
+
+%title {
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  line-height: var(--f-mdl);
+  position: relative;
+}

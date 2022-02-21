@@ -1,0 +1,51 @@
+@mixin placeholder($concat) {
+  @if ($concat) {
+    &:-ms-input-placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+  } @else {
+    :-ms-input-placeholder { @content; }
+    :-moz-placeholder { @content; }
+    ::-moz-placeholder { @content; }
+    ::-webkit-input-placeholder { @content; }
+  }
+}
+
+@mixin hyphens() {
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin break-words() {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin scrollbars($size, $color, $height) {
+  &::-webkit-scrollbar {
+    transition: background-color .12s linear, height .12s linear, width .12s linear;
+    @if ($height) { height: $height; }
+    width: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    transition: background-color .12s linear, height .12s linear, width .12s linear;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba($color, .4);
+    transition: background-color .12s linear, height .12s linear, width .12s linear;
+    width: $size;
+  }
+}

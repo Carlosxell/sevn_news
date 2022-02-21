@@ -1,0 +1,51 @@
+@mixin colors-root {
+  --white: #fff;
+  --black: #000;
+  --bg-color: #efeff6;
+  --bg-color2: #fbfbfb;
+  --primary-color: #3d2892;
+  --primary-color-light: #6e5eae;
+  --green: #2ecc71;
+  --orange: #f68b1f;
+  --red: #f61f1f;
+  --gray: #404142;
+
+  --light-gray: #c5c5c5;
+  --middle-gray: #747679;
+  --dark-gray: #979797;
+  --blue-gray: #a0a9ba;
+  --almost-black: #1e1e1e;
+
+  --blue: #1c84fe;
+
+  --shadow-transparent: rgba(0, 0, 0, 0.5);
+  --focus-color: rgba(21, 156, 228, 0.4);
+
+  // NEW PATTERN
+  --c-primary: #3d2892;
+
+  --c-light-01: #fefefe;
+
+  --c-gray: #404142;
+  --c-gray--01: #747679;
+  --c-gray--02: #979797;
+  --c-gray--03: #a0a9ba;
+  --c-gray--04: #e3dddd;
+  --c-gray--05: #d2d2dd;
+  --c-gray--06: #bbbbc6;
+  --c-gray--07: #b3b3b3;
+
+  --c-white: #fff;
+
+  --c-red: #f61f1f;
+  --c-red--01: #960012;
+  --c-red--02: #da3347;
+
+  --c-green: #145528;
+  --c-green--01: #38ba5f;
+
+  --c-black: #000;
+  --c-black--01: #262728;
+  --c-black--02: #4b4b4b;
+  --c-black--03: #161616;
+}

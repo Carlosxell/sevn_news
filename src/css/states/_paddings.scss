@@ -1,0 +1,15 @@
+@import '../utilities/variables/sizes';
+
+@each $name, $val in $map-sizes {
+  .s-pad--#{$name} {
+    padding: $val;
+  }
+
+  .s-padBottom--#{$name} {
+    padding-bottom: $val;
+  }
+
+  .s-padTop--#{$name} {
+    padding-top: $val;
+  }
+}

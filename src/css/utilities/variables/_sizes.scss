@@ -1,0 +1,20 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+
+@import '../utils/functions';
+
+$sizes: ('xs', 'xsl', 'sm', 'sml', 'md', 'mdl', 'lg', 'xl');
+
+$map-sizes: (
+  xs:  8px,
+  xsl: 12px,
+  sm:  16px,
+  sml: 20px,
+  md:  24px,
+  mdl: 32px,
+  lg:  36px,
+  xl:  40px,
+  xw:  48px,
+);
+

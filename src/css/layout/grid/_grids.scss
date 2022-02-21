@@ -1,0 +1,8 @@
+@import '../../utilities/variables/all';
+@import '../../utilities/utils/all';
+@import '../../utilities/extends/extends';
+
+.l-grid {
+  display: grid;
+  grid-gap: var(--gap-sm);
+}

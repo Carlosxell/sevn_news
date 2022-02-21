@@ -1,0 +1,21 @@
+@mixin fonts-root {
+  --page-title-size: 32px;
+  --page-subtitle-size: 18px;
+  --section-title-size: 20px;
+  --global__font-size--small: 12px;
+
+  // NEW PATTERN
+  --f-xs: 12px;
+  --f-xsl: 12px;
+  --f-sm: 14px;
+  --f-sml: 16px;
+  --f-md: 20px;
+  --f-mdl: 24px;
+  --f-lg: 32px;
+  --f-xl: 48px;
+
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-semibold: 500;
+  --fw-bold: 600;
+}
