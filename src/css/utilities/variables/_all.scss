@@ -6,48 +6,9 @@
   // colors
   @include colors-root;
 
-  // layout
-  --border-radius: 4px;
-  --header-height: 60px;
-  --height-topless: calc(100vh - var(--header-height));
-
   // font size
   @include fonts-root;
 
   // gaps, margins, paddings
   @include gaps-root;
-
-  // button
-  --dl-button__border-radius--rounded: 16px;
-  --dl-button__primary: var(--primary-color);
-  --dl-button__secondary: var(--c-white);
-  --dl-button__tertiary: var(--black);
-  --dl-button__quaternary: var(--middle-gray);
-
-  // input
-  --dl-input__primary: var(--black);
-  --dl-input__secondary: var(--blue-gray);
-  --dl-input__content__padding: 0;
-
-  // modal
-  --dl-modal__bg-color: rgba(0, 0, 0, 0.8);
-  --dl-modal__wrapper-main__bg-color: var(--c-white);
-
-  // radio
-  --dl-radio__primary: var(--primary-color);
-  --dl-radio__secondary: var(--c-white);
-  --dl-radio__tertiary: var(--black);
-  --dl-radio__quaternary: var(--middle-gray);
-
-  // select
-  --dl-select__primary: var(--primary-color);
-  --dl-select__secondary: var(--c-white);
-  --dl-select__tertiary: var(--black);
-  --dl-select__border: var(--blue-gray);
-
-  // autocomplete
-  --dl-autocomplete__primary: var(--primary-color);
-  --dl-autocomplete__secondary: var(--c-white);
-  --dl-autocomplete__tertiary: var(--middle-gray);
-  --dl-autocomplete__border: var(--blue-gray);
 }
