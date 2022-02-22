@@ -4,12 +4,4 @@
   .s-margin--#{$name} {
     margin: $val;
   }
-
-  .s-marginBottom--#{$name} {
-    margin-bottom: $val;
-  }
-
-  .s-marginTop--#{$name} {
-    margin-top: $val;
-  }
 }

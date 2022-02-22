@@ -4,12 +4,4 @@
   .s-pad--#{$name} {
     padding: $val;
   }
-
-  .s-padBottom--#{$name} {
-    padding-bottom: $val;
-  }
-
-  .s-padTop--#{$name} {
-    padding-top: $val;
-  }
 }
