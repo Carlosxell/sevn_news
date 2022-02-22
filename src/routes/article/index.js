@@ -38,11 +38,11 @@ export const post = async ({ request, locals }) => {
 };
 
 // If the user has JavaScript disabled, the URL will change to
-// include the method override unless we redirect back to /todos
+// include the method override unless we redirect back to /article
 const redirect = {
 	status: 303,
 	headers: {
-		location: '/todos'
+		location: '/article'
 	}
 };
 

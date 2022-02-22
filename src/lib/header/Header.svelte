@@ -1,14 +1,5 @@
 <script>
-	import {page} from '$app/stores';
-	import {afterUpdate, onMount} from 'svelte';
-
-	onMount(() => {
-		console.info($page, 'Dados da página no carregamento');
-	});
-
-	afterUpdate(() => {
-		console.info($page, 'Dados da página no update');
-	});
+	import { page } from '$app/stores';
 </script>
 
 <header class="header">
@@ -22,7 +13,7 @@
 	</div>
 </header>
 
-<style lang="scss">
+<style global lang="scss">
 	.header {
 		position: fixed;
 		background-color: var(--c-yellow);
@@ -49,7 +40,7 @@
 			width: 54px;
 
 			img {
-				height: 30px;
+				height: 32px;
 				width: 32px;
 			}
 		}
