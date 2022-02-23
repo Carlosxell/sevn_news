@@ -1,29 +1,26 @@
 <script context="module">
 	import AdBox from '$lib/PublicityBox.svelte';
+	import HeadlinerBox from '$lib/HeadlinerBox.svelte';
+	import SubArticles from '$lib/SubArticles.svelte';
 
 	export const prerender = true;
 </script>
 
 <script>
-	import { onMount } from 'svelte';
 	import { api } from '../http/_api.js';
 
-	let headliners = [];
-	let articles = [];
-	// let apiError = false;
-
-	async function getApi() {
-		await api('GET', 'news/headlines').then((res) => {
-			res.json().then(data => (headliners = data));
-		});
-		await api('GET', 'news/others').then((res) => {
-			res.json().then(data => (articles = data));
-		});
+	async function getHeadliners() {
+		const response = await api('GET', 'news/headlines');
+		return response.json();
 	}
 
-	onMount(() => {
-		getApi();
-	})
+	async function getArticles() {
+		const response = await api('GET', 'news/others');
+		return response.json();
+	}
+
+	let promiseHeadliners = getHeadliners();
+	let promiseArticles = getArticles();
 </script>
 
 <svelte:head>
@@ -33,11 +30,25 @@
 <section class="page homePage">
 	<AdBox />
 
-	<div class="homePage__headliners">
-		{#each headliners as item}
-			<div class="">{item.title}</div>
-		{/each}
-	</div>
+	{#await promiseHeadliners}
+		<p>Teste</p>
+	{:then headliners}
+		<section class="homePage__headliners">
+			{#each headliners as item}
+				<HeadlinerBox data={item} />
+			{/each}
+		</section>
+	{/await}
+
+	{#await promiseArticles}
+		<p>Teste Artigos</p>
+	{:then headliners}
+		<section class="homePage__subNews">
+			{#each headliners as item}
+				<SubArticles data={item} />
+			{/each}
+		</section>
+	{/await}
 </section>
 
 <style lang="scss">
@@ -48,6 +59,39 @@
 	}
 
 	.homePage {
-		&__headliners {}
+		&__headliners,
+		&__subNews {
+			display: grid;
+			grid-gap: var(--gap-sml);
+			width: 100%;
+		}
+
+		&__headliners {
+			margin-top: 84px;
+
+			@media(min-width: 568px) {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			@media(min-width: 1024px) {
+				grid-template-columns: 1fr 280px 280px;
+			}
+		}
+
+		&__subNews {
+			margin-top: 70px;
+
+			@media(min-width: 468px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media(min-width: 768px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			@media(min-width: 1024px) {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
 	}
 </style>

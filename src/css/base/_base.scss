@@ -63,12 +63,12 @@ select {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
+  background: var(--c-black);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-color);
+  //background: var(--c-gray--rgb);
   cursor: pointer;
 }
 ::-webkit-scrollbar {
@@ -77,6 +77,6 @@ select {
 }
 
 ::selection {
-  background: var(--primary-color);
+  background: var(--c-gray--rgb);
   color: #fff;
 }

@@ -1,7 +1,7 @@
 @import '../utilities/variables/sizes';
 
-@each $name, $val in $map-sizes {
-  .s-pad--#{$name} {
-    padding: $val;
-  }
-}
+//@each $name, $val in $map-sizes {
+//  .s-pad--#{$name} {
+//    padding: $val;
+//  }
+//}

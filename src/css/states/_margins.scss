@@ -1,7 +1,7 @@
 @import '../utilities/variables/sizes';
 
-@each $name, $val in $map-sizes {
-  .s-margin--#{$name} {
-    margin: $val;
-  }
-}
+//@each $name, $val in $map-sizes {
+//  .s-margin--#{$name} {
+//    margin: $val;
+//  }
+//}
