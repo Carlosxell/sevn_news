@@ -88,10 +88,14 @@
       }
 
       .headlinerBox__title {
-        font-size: var(--f-lg);
+        font-size: var(--f-mdl);
       }
 
-      @media(min-width: 1024px) {}
+      @media(min-width: 568px) {
+        .headlinerBox__title {
+          font-size: var(--f-lg);
+        }
+      }
 
       @media(min-width: 1280px) {
         .headlinerBox__title {
