@@ -12,10 +12,13 @@
 
 <style lang="scss">
   .subArticle {
+    --pseudo--bg: var(--c-gray--rgb);
+
     align-items: center;
-    border-left: 6px solid var(--c-gray--rgb);
+    border-left: 6px solid transparent;
     display: flex;
     padding: 4px 0 4px var(--gap-xs);
+    position: relative;
 
     &:visited {
       color: var(--c-black);
@@ -31,17 +34,30 @@
       font-size: var(--f-sm);
       font-weight: var(--fw-bold);
     }
+
+    &:before {
+      background-color: var(--pseudo--bg);
+      border-radius: 10px;
+      bottom: 0;
+      content: '';
+      display: inline-block;
+      height: 100%;
+      left: -6px;
+      position: absolute;
+      top: 0;
+      width: 6px;
+    }
   }
 
   .s-borderRed {
-    border-color: var(--c-red-01);
+    --pseudo--bg: var(--c-red-01);
   }
 
   .s-borderBlue {
-    border-color: var(--c-blue);
+    --pseudo--bg: var(--c-blue);
   }
 
   .s-borderGreen {
-    border-color: var(--c-green);
+    --pseudo--bg: var(--c-green);
   }
 </style>
