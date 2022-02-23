@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Página inicial</title>
 </svelte:head>
 
 <section class="page homePage">
