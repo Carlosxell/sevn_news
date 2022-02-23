@@ -1,5 +1,6 @@
 <script>
-	import { beforeUpdate, onMount } from 'svelte';
+	import AdBox from '$lib/PublicityBox.svelte';
+	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { api } from '../../http/_api.js';
 
@@ -10,11 +11,10 @@
 		await api('GET', `news/articles/${$page.params.id}`).then(res => res.json()).then(res => {
 			article = res;
 			title = article.title;
-			console.info(article, 'recebido');
 		});
 	}
 
-	beforeUpdate(() => {
+	onMount(() => {
 		getArticle();
 	});
 </script>
@@ -23,7 +23,18 @@
 	<title>{title}</title>
 </svelte:head>
 
-<p>Articles</p>
+{#if article}
+	<div class="articlePage">
+		Articles
+
+		<AdBox />
+	</div>
+{/if}
 
 <style lang="scss">
+	.articlePage {
+		margin: auto;
+		max-width: 980px;
+		padding: var(--gap-mdl) 0;
+	}
 </style>
