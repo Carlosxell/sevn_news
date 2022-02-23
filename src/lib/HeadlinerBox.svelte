@@ -39,6 +39,9 @@
 
     &__imgBox {
       border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      height: 190px;
       overflow: hidden;
 
       img {
@@ -60,7 +63,8 @@
     }
 
     &__title {
-      font-size: var(--f-sml);
+      --full-title: var(--f-sml);
+      font-size: var(--full-title);
 
       @media(min-width: 1024px) {
         font-size: var(--f-md);
@@ -78,9 +82,18 @@
 
     &--full {
       @extend .headlinerBox;
-      font-size: var(--f-xl);
 
-      @media(min-width: 1024px) {
+      .headlinerBox__category {
+        margin-top: 0;
+      }
+
+      .headlinerBox__title {
+        font-size: var(--f-lg);
+      }
+
+      @media(min-width: 1024px) {}
+
+      @media(min-width: 1280px) {
         .headlinerBox__title {
           font-size: 48px;
         }

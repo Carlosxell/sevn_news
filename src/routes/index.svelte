@@ -51,7 +51,7 @@
 	{/await}
 </section>
 
-<style lang="scss">
+<style lang="scss" global>
 	.page {
 		margin: auto;
 		max-width: 1180px;
@@ -69,8 +69,21 @@
 		&__headliners {
 			margin-top: 84px;
 
-			@media(min-width: 568px) {
-				grid-template-columns: 1fr 1fr;
+			@media(min-width: 568px) and (max-width: 1023px){
+				grid-template-areas:  "topo topo"
+															"esquerda direita";
+
+				.headlinerBox--full {
+					grid-area: topo;
+				}
+
+				.headlinerBox--full:nth-child(2) {
+					grid-area: esquerda;
+				}
+
+				.headlinerBox--full:nth-child(3) {
+					grid-area: direita;
+				}
 			}
 
 			@media(min-width: 1024px) {
