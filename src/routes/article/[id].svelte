@@ -37,7 +37,7 @@
 
 {#if article}
 	<div class="articlePage">
-		<p class="articlePage__category">{article.category}</p>
+		<p class={`articlePage__category ${(article.categoryId === 1) ? 's-borderRed' : ((article.categoryId === 2) ? 's-borderBlue' : 's-borderGreen') }`}>{article.category}</p>
 		<h2 class="articlePage__title">{article.title}</h2>
 		<h3 class="articlePage__subtitle">{article.subtitle}</h3>
 
@@ -48,15 +48,94 @@
 		<AdBox />
 
 		{#each paragraphs  as paragraph}
-			<p class="articlePage__subtitle">{paragraph}</p>
+			<p class="articlePage__paragraph">{paragraph}</p>
 		{/each}
 	</div>
 {/if}
 
-<style lang="scss">
+<style lang="scss" global>
 	.articlePage {
 		margin: auto;
 		max-width: 980px;
 		padding: var(--gap-mdl) 0;
+
+		&__category {
+			color: var(--c-black);
+			font-weight: var(--fw-bold);
+			font-size: var(--f-xsl);
+			margin: 0 auto 8px;
+		}
+
+		&__title {
+			font-size: var(--f-mdl);
+			font-weight: var(--fw-bold);
+			margin-bottom: var(--gap-md);
+
+			@media(min-width: 568px) {
+				font-size: var(--f-lg);
+			}
+
+			@media(min-width: 1048px) {
+				font-size: 48px;
+				line-height: 48px;
+			}
+
+			@media(min-width: 1280px) {
+				font-size: 58px;
+				line-height: 60px;
+			}
+		}
+
+		&__subtitle {
+			font-size: var(--f-sml);
+			margin-bottom: var(--gap-md);
+
+			@media(min-width: 568px) {
+				font-size: var(--f-md);
+			}
+
+			@media(min-width: 1048px) {
+				font-size: var(--f-mdl);
+			}
+		}
+
+		&__date {
+			color: var(--c-gray--rgb);
+			display: block;
+			font-size: var(--f-xs);
+			font-weight: var(--fw-bold);
+			margin-bottom: var(--gap-xl);
+
+			+ .adBox {
+				margin-bottom: 60px;
+			}
+		}
+
+		&__paragraph {
+			display: block;
+			font-size: var(--f-sml);
+			padding-bottom: var(--gap-md);
+
+			@media(min-width: 448px) {
+				font-size: 18px;
+			}
+
+			@media(min-width: 1048px) {
+				font-size: var(--f-md);
+				line-height: var(--f-mdl);
+			}
+		}
+	}
+
+	.s-borderRed {
+		color: var(--c-red-01);
+	}
+
+	.s-borderBlue {
+		color: var(--c-blue);
+	}
+
+	.s-borderGreen {
+		color: var(--c-green);
 	}
 </style>
