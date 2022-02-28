@@ -1,6 +1,9 @@
 <script>
 	import AdBox from '$lib/PublicityBox.svelte';
 	import { onMount } from 'svelte';
+
+	import loader from '../../stores/stores.js';
+
 	import { page } from '$app/stores';
 	import { api } from '../../http/_api.js';
 
@@ -8,6 +11,9 @@
 	let article = null;
 	let paragraphs = [];
 	let articleDate = null;
+
+	const resetLoader = () =>  loader.reset();
+	const showLoader = (val) => loader.set(val);
 
 	let getDate = (date) => {
 		// eslint-disable-next-line no-unused-vars
@@ -23,10 +29,12 @@
 			title = `${article.category} - ${article.title}`;
 			articleDate = getDate(article.date);
 			paragraphs = article.article.split('<br><br>');
+			resetLoader();
 		});
 	}
 
 	onMount(() => {
+		showLoader({ active: true, text: 'Carregando' });
 		getArticle();
 	});
 </script>

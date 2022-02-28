@@ -8,14 +8,23 @@
 
 <script>
 	import { api } from '../http/_api.js';
+	import loader from '../stores/stores.js';
+
+	let title = 'Carregando';
+
+	const resetLoader = () =>  loader.reset();
+	const showLoader = (val) => loader.set(val);
 
 	async function getHeadliners() {
 		const response = await api('GET', 'news/headlines');
+		await showLoader({ active: true, text: 'Carregando' });
 		return response.json();
 	}
 
 	async function getArticles() {
 		const response = await api('GET', 'news/others');
+		title = 'Página inicial';
+		await resetLoader();
 		return response.json();
 	}
 
@@ -24,14 +33,13 @@
 </script>
 
 <svelte:head>
-	<title>Página inicial</title>
+	<title>{title}</title>
 </svelte:head>
 
 <section class="page homePage">
 	<AdBox />
 
 	{#await promiseHeadliners}
-		<p>Teste</p>
 	{:then headliners}
 		<section class="homePage__headliners">
 			{#each headliners as item}
@@ -41,7 +49,6 @@
 	{/await}
 
 	{#await promiseArticles}
-		<p>Teste Artigos</p>
 	{:then headliners}
 		<section class="homePage__subNews">
 			{#each headliners as item}
@@ -69,20 +76,25 @@
 		&__headliners {
 			margin-top: 84px;
 
-			@media(min-width: 568px) and (max-width: 1023px){
+			@media(min-width: 568px) and (max-width: 1023px) {
 				grid-template-areas:  "topo topo"
 															"esquerda direita";
+				grid-template-columns: 1fr 1fr;
 
 				.headlinerBox--full {
-					grid-area: topo;
+					//grid-area: topo;
+					grid-column: 1 / 3;
+					grid-row: 1 / 2;
 				}
 
-				.headlinerBox--full:nth-child(2) {
-					grid-area: esquerda;
+				.headlinerBox:nth-child(2) {
+					//grid-area: esquerda;
+					grid-column: 1 / 2;
 				}
 
-				.headlinerBox--full:nth-child(3) {
-					grid-area: direita;
+				.headlinerBox:nth-child(3) {
+					//grid-area: direita;
+					grid-column: 2 / 3;
 				}
 			}
 
