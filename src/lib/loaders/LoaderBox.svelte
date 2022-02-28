@@ -11,16 +11,17 @@
 <div class="loaderBox">
   <div class="loaderBox__loader"></div>
   {#if loaderInfo.text}
-    <p className="loaderBox__text">{ loaderInfo.text }</p>
+      <p class="loaderBox__text">{ loaderInfo.text }</p>
   {/if}
 </div>
 
 <style lang="scss">
   .loaderBox {
     align-items: center;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .75);
     bottom: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     left: 0;
     position: fixed;
@@ -34,12 +35,6 @@
       position: relative;
       width: var(--square);
 
-      &__text {
-        color: var(--c-white);
-        font-size: var(--f-md);
-        font-weight: var(--fw-bold);
-      }
-
       &:after {
         animation: hourglass 1.2s infinite;
         box-sizing: border-box;
@@ -52,6 +47,13 @@
         margin: var(--gap-xxs);
         width: 0;
       }
+    }
+
+    &__text {
+      color: var(--c-white);
+      font-size: var(--f-md);
+      font-weight: var(--fw-bold);
+      margin-top: var(--gap-sml);
     }
   }
 
